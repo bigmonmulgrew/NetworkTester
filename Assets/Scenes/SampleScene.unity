@@ -899,6 +899,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &774983027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774983029}
+  - component: {fileID: 774983028}
+  m_Layer: 0
+  m_Name: NetworkTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &774983028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774983027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73abc64b51850f04b8e60669b30fd629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkTester
+--- !u!4 &774983029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774983027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1299.2362, y: 618.61145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776264197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1304,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NetworkTesterUI
   consoleLog: {fileID: 467531928}
   scrollRect: {fileID: 224245115}
-  maxLines: 0
+  maxLines: 200
+  addressInput: {fileID: 0}
+  timeoutInput: {fileID: 0}
+  bufferSizeInput: {fileID: 0}
+  ttlInput: {fileID: 0}
+  dontFragmentInput: {fileID: 0}
 --- !u!1 &2109942805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,3 +1408,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 2062025472}
   - {fileID: 776264200}
+  - {fileID: 774983029}
