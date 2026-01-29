@@ -34,7 +34,6 @@ public class NetworkTester : MonoBehaviour
 
     void HandleBeginTests()
     {
-        Debug.Log("Begin test requested from UI");
         BeginTests();
 
     }

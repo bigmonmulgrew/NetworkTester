@@ -33,6 +33,9 @@ public class NetworkTesterUI : MonoBehaviour
 
     [SerializeField] Toggle dontFragmentToggle;
 
+    [SerializeField] TMP_InputField testCountInput;
+    [SerializeField] Slider testCountSlider;
+
     [Header("Stress testing settings")]
     [SerializeField] int repeatCount = 1;
     #endregion
@@ -50,6 +53,7 @@ public class NetworkTesterUI : MonoBehaviour
     public int BufferSize => int.TryParse(bufferSizeInput.text, out int v) ? v : 32;
     public int TTL => int.TryParse(ttlInput.text, out int v) ? v : 128;
     public bool DontFragment => dontFragmentToggle.isOn;
+    public int TestCount => int.TryParse(testCountInput.text, out int v) ? v : 1;
     #endregion
 
     void Awake()
@@ -77,6 +81,9 @@ public class NetworkTesterUI : MonoBehaviour
 
         ttlInput.onValueChanged.AddListener(OnTTLInputChanged);
         ttlSlider.onValueChanged.AddListener(OnTTLSliderChanged);
+
+        testCountInput.onValueChanged.AddListener(OnTestCountInputChanged);
+        testCountSlider.onValueChanged.AddListener(OnTestCountSliderChanged);
     }
 
     public void Print(string line)
@@ -95,7 +102,6 @@ public class NetworkTesterUI : MonoBehaviour
 
     public void BeginTestButtonPressed()
     {
-        Debug.Log("Button pressed");
         OnBeginTest?.Invoke();
     }
     void OnTimeoutInputChanged(string value) 
@@ -124,5 +130,14 @@ public class NetworkTesterUI : MonoBehaviour
         ttlInput.text = output.ToString();
     }
     void OnTTLSliderChanged(float value) { ttlInput.text = value.ToString(); }
+
+    void OnTestCountInputChanged(string value)
+    {
+        int output = int.TryParse(value, out int i) ? i : 128;
+        if (output > testCountSlider.maxValue) output = (int)testCountSlider.maxValue;
+        testCountSlider.value = output;
+        testCountInput.text = output.ToString();
+    }
+    void OnTestCountSliderChanged(float value) { testCountInput.text = value.ToString(); }
 
 }
