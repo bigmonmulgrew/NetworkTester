@@ -40,9 +40,19 @@ public class NetworkTester : MonoBehaviour
 
     void BeginTests()
     {
-        PingHost(networkTesterUI.Address);
-        string output = PingHost(networkTesterUI.Address);
-        networkTesterUI.Print(output);
+        int testCount =networkTesterUI.TestCount;
+        for(int i = 0; i < testCount; i++)
+        {
+            PingHost(
+                networkTesterUI.Address,
+                networkTesterUI.Timeout,
+                networkTesterUI.BufferSize,
+                networkTesterUI.TTL,
+                networkTesterUI.DontFragment
+                );
+            string output = PingHost(networkTesterUI.Address);
+            networkTesterUI.Print(output);
+        }
     }
     string PingHost(string address, int timeout, int bufferSize, int ttl, bool dontFragment)
     {
@@ -64,16 +74,21 @@ public class NetworkTester : MonoBehaviour
     }
     #region PingHost overlaods
     string PingHost(string address) { return PingHost(address, DEFAULT_TIMEOUT, DEFAULT_BUFFER_SIZE, DEFAULT_TTL, DEFAULT_DONT_FRAGMENT); }
-    
+    string PingHost(string address, int timeout) { return PingHost(address, timeout, DEFAULT_BUFFER_SIZE, DEFAULT_TTL, DEFAULT_DONT_FRAGMENT); }
+    string PingHost(string address, int timeout, int bufferSizer) { return PingHost(address, DEFAULT_TIMEOUT, DEFAULT_BUFFER_SIZE, DEFAULT_TTL, DEFAULT_DONT_FRAGMENT); }
+
     #endregion
 
     string FormatReply(PingReply reply)
     {
         if (reply.Status != IPStatus.Success) return $"Ping Status: {reply.Status}";
 
-        return $"Reply from {reply.Address} " +
-               $"time={reply.RoundtripTime}ms " +
-               $"TTL={reply.Options.Ttl} " +
-               $"Size={reply.Buffer.Length}";
+        string consoleLine = "";
+        consoleLine += $"Reply from {reply.Address} ";
+        consoleLine += $"time={reply.RoundtripTime}ms ";
+        consoleLine += $"TTL={reply.Options.Ttl} ";
+        consoleLine += $"Size={reply.Buffer.Length}";
+
+        return  consoleLine;
     }
 }
