@@ -84,6 +84,7 @@ public class NetworkTester : MonoBehaviour
         if (reply.Status != IPStatus.Success) return $"Ping Status: {reply.Status}";
 
         string consoleLine = "";
+
         consoleLine += $"Reply from {reply.Address} ";
         consoleLine += $"time={reply.RoundtripTime}ms ";
         consoleLine += $"TTL={reply.Options.Ttl} ";
