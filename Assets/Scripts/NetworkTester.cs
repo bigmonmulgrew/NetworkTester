@@ -43,14 +43,14 @@ public class NetworkTester : MonoBehaviour
         int testCount =networkTesterUI.TestCount;
         for(int i = 0; i < testCount; i++)
         {
-            PingHost(
+            string output = PingHost(
                 networkTesterUI.Address,
                 networkTesterUI.Timeout,
                 networkTesterUI.BufferSize,
                 networkTesterUI.TTL,
                 networkTesterUI.DontFragment
                 );
-            string output = PingHost(networkTesterUI.Address);
+            //string output = PingHost(networkTesterUI.Address);
             networkTesterUI.Print(output);
         }
     }
