@@ -256,41 +256,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &544781126
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 544781127}
-  m_Layer: 5
-  m_Name: scal me
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &544781127
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544781126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1412993162}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,11 +419,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1412993162 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5047267115645223182, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
-  m_PrefabInstance: {fileID: 3410594727964986324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1247979735205569078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5892236763567900947, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0008544922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6148787422661814471, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -716,20 +676,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7677418867659002837, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9210397263986290727, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
       propertyPath: m_Name
       value: NetworkTestCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5047267115645223182, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 544781127}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba6e1d4f2d9894442b84734f1adbb30e, type: 3}
 --- !u!1660057539 &9223372036854775807
